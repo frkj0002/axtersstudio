@@ -1,0 +1,58 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+import { Image } from "astro:assets";
+import Display from "../components/Display.astro";
+import H1 from "../components/H1.astro";
+import H2 from "../components/H2.astro";
+import H3 from "../components/H3.astro";
+import H4 from "../components/H4.astro";
+import P from "../components/P.astro";
+import portraet from "../assets/images/portraet.jpg";
+import procesbillede from "../assets/images/procesbillede.jpg";
+---
+
+<MainLayout title="om">
+	<div class="overflow-clip h-full">
+		<div id="scroll_container" class="h-[500vh]">
+			<div id="scroll_liste" class="flex sticky top-[10vh]">
+				<section id="start" class="flex w-screen h-full gap-lg overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
+					<div class="">
+						<Image src={procesbillede} alt="procesbillede" class="col-start-1 col-span-6 row-span-full rounded-[4px] md:rounded-[8px] z-0 w-[624px]" />
+					</div>
+
+					<div class="">
+						<h1>
+							<H1 tekst="om axters studio" />
+							<p class="w-[10px]">
+								<P tekst="Hey! Jeg hedder Emilie, og er skaberen bag Axters Studios. Læs med her, for at høre hvordan mit lille smykkeunivers opstod!" />
+							</p>
+						</h1>
+					</div>
+				</section>
+				<section id="section2" class="flex">
+					<div>
+						<h2>
+							<H2 tekst="Fra frustration til form" />
+						</h2>
+						<p>
+							<P tekst="Jeg har altid elsket det kreative - at forme noget med hænderne og give det liv. Jeg drømte om at udsmykke mine ører med piercinger og fine øreringe, men min krop ville noget andet.Uanset hvor jeg fik lavet mine piercinger, endte det med betændelse og irritation. Jeg prøvede igen og igen. Til sidst måtte jeg opgive - og heldigvis fandt jeg min egen løsning." />
+						</p>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</MainLayout>
+
+<script>
+	import { animate, scroll } from "motion";
+
+	scroll(
+		animate("#scroll_liste", {
+			transform: ["none", "translateX(-200vw)"],
+		}),
+		{ target: document.querySelector("#scroll_container") }
+	);
+</script>

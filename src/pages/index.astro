@@ -3,7 +3,6 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
-import thumbsup from "../assets/images/thumbsup.png";
 import Display from "../components/Display.astro";
 import H1 from "../components/H1.astro";
 import H2 from "../components/H2.astro";
@@ -17,11 +16,10 @@ import P from "../components/P.astro";
 		<h1>Index overskrift</h1>
 		<Button>Klik!</Button>
 		<p>Link til <Link href="https://www.kea.dk" target="_blank">En anden side</Link></p>
-		<Image src={thumbsup} alt="" />
 	</article>
 	<p class="m-5xl">
 		<h1 class="p-8xl">
-		<Display tekst="hejsa" />
+			<Display tekst="hejsa" />
 		</h1>
 		<H2 tekst="hejsa med digs" />
 		<P tekst="virker det?" />
@@ -31,4 +29,34 @@ import P from "../components/P.astro";
 	</h1>
 	<h1 class="heading1">tester igen</h1>
 	<h1 class="p-s border-4 border-red-300 rounded-[8px]">padding tester</h1>
+	<section id="burnnn" class="sticky">
+		<div class="sticky top-0 left-0 right-0 bottom-0 h-screen w-full bg-cover bg-center" style="background-image:url('/burn.jpg')">
+			<div class="relative flex justify-end">
+				<div class="flex flex-col w-full md:w-1/2 h-full justify-center gap-xs p-xs">
+					<div class="bg-beige-600 parallaxelement1">
+						<p>
+							<P tekst="hej med dig jeg er sej" />
+						</p>
+					</div>
+					<div class="bg-beige-600 parallaxelement2">
+						<p>
+							<P tekst="hej med dig jeg er sejere end dig" />
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="h-[100vh]"></div>
+	</section>
 </MainLayout>
+
+<script>
+	import { animate, scroll } from "motion";
+
+	scroll(animate(".parallaxelement1", { y: [1000, -60] }), {
+		target: document.querySelector("#burnnn"),
+	});
+	scroll(animate(".parallaxelement2", { y: [3000, -30] }), {
+		target: document.querySelector("#burnnn"),
+	});
+</script>

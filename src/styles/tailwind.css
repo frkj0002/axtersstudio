@@ -11,7 +11,6 @@
 @theme {
 	--font-sans: "Roboto";
 	--font-display: "Italiana";
-	--heading1: font-display;
 	/* Her tilføjes theme variable // tokens */
 	--color-blue-950: rgba(17, 19, 20, 1);
 	--color-blue-900: rgba(32, 37, 39, 1);
@@ -96,10 +95,6 @@
 	--border-large: 2px;
 	--border-radius-desktop: 8px;
 	--border-radius-mobile: 4px;
-
-  borderRadius: {
-    
-  }
 }
 
 @layer base {
