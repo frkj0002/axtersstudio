@@ -1,26 +1,118 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/forms';
 
-
-@theme {
-  /* Her tilføjes theme variable // tokens */
+@font-face {
+	font-family: Roboto;
+	font-family: Italiana;
 }
 
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+@theme {
+	--font-sans: "Roboto";
+	--font-display: "Italiana";
+	--heading1: font-display;
+	/* Her tilføjes theme variable // tokens */
+	--color-blue-950: rgba(17, 19, 20, 1);
+	--color-blue-900: rgba(32, 37, 39, 1);
+	--color-blue-800: rgba(67, 77, 80, 1);
+	--color-blue-700: rgba(99, 114, 121, 1);
+	--color-blue-600: rgba(137, 152, 159, 1);
+	--color-blue-500: rgba(177, 187, 192, 1);
+	--color-blue-400: rgba(192, 201, 204, 1);
+	--color-blue-300: rgba(207, 214, 216, 1);
+	--color-blue-200: rgba(224, 228, 230, 1);
+	--color-blue-100: rgba(238, 240, 241, 1);
+	--color-blue-50: rgba(247, 248, 248, 1);
+
+	--color-red-950: rgba(0, 0, 0, 1);
+	--color-red-900: rgba(4, 2, 1, 1);
+	--color-red-800: rgba(8, 3, 2, 1);
+	--color-red-700: rgba(12, 5, 3, 1);
+	--color-red-600: rgba(12, 5, 3, 1);
+	--color-red-500: rgba(18, 7, 5, 1);
+	--color-red-400: rgba(91, 37, 27, 1);
+	--color-red-300: rgba(169, 70, 49, 1);
+	--color-red-200: rgba(211, 123, 105, 1);
+	--color-red-100: rgba(233, 189, 180, 1);
+	--color-red-50: rgba(243, 220, 216, 1);
+
+	--color-green-950: rgba(16, 16, 14, 1);
+	--color-green-900: rgba(35, 35, 31, 1);
+	--color-green-800: rgba(67, 68, 60, 1);
+	--color-green-700: rgba(102, 103, 91, 1);
+	--color-green-600: rgba(137, 138, 122, 1);
+	--color-green-500: rgba(167, 168, 156, 1);
+	--color-green-400: rgba(185, 186, 176, 1);
+	--color-green-300: rgba(202, 203, 195, 1);
+	--color-green-200: rgba(219, 219, 214, 1);
+	--color-green-100: rgba(238, 238, 236, 1);
+	--color-green-50: rgba(245, 245, 244, 1);
+
+	--color-grey-950: rgba(8, 8, 8, 1);
+	--color-grey-900: rgba(13, 13, 13, 1);
+	--color-grey-800: rgba(26, 26, 26, 1);
+	--color-grey-700: rgba(41, 41, 41, 1);
+	--color-grey-600: rgba(54, 54, 54, 1);
+	--color-grey-500: rgba(66, 66, 66, 1);
+	--color-grey-400: rgba(105, 105, 105, 1);
+	--color-grey-300: rgba(143, 143, 143, 1);
+	--color-grey-200: rgba(179, 179, 179, 1);
+	--color-grey-100: rgba(217, 217, 217, 1);
+	--color-grey-50: rgba(237, 237, 237, 1);
+
+	--color-beige-50: rgba(255, 255, 255, 1);
+	--color-beige-100: rgba(253, 253, 252, 1);
+	--color-beige-200: rgba(251, 250, 249, 1);
+	--color-beige-300: rgba(251, 250, 249, 1);
+	--color-beige-400: rgba(249, 248, 246, 1);
+	--color-beige-500: rgba(247, 246, 243, 1);
+	--color-beige-600: rgba(208, 202, 185, 1);
+	--color-beige-700: rgba(169, 159, 126, 1);
+	--color-beige-800: rgba(116, 107, 78, 1);
+	--color-beige-900: rgba(58, 53, 39, 1);
+	--color-beige-950: rgba(31, 28, 20, 1);
+
+	/* Spacing */
+	--spacing-xxs: 8px;
+	--spacing-xs: 16px;
+	--spacing-s: 24px;
+	--spacing-sm: 32px;
+	--spacing-m: 40px;
+	--spacing-ml: 48px;
+	--spacing-lg: 64px;
+	--spacing-xl: 80px;
+	--spacing-2xl: 96px;
+	--spacing-3xl: 112px;
+	--spacing-4xl: 128px;
+	--spacing-5xl: 160px;
+	--spacing-6xl: 208px;
+	--spacing-7xl: 320px;
+	--spacing-8xl: 360px;
+	--spacing-9xl: 424px;
+
+	/* Borders */
+	--border-small: 1px;
+	--border-large: 2px;
+	--border-radius-desktop: 8px;
+	--border-radius-mobile: 4px;
+
+  borderRadius: {
+    
   }
 }
 
-@layer components{
-
+@layer base {
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentColor);
+	}
 }
-@layer utilities{
-  
+
+@layer components {
+}
+@layer utilities {
 }
