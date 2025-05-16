@@ -11,6 +11,14 @@ import H4 from "../components/H4.astro";
 import P from "../components/P.astro";
 import portraet from "../assets/images/portraet.jpg";
 import procesbillede from "../assets/images/procesbillede.jpg";
+import stylingbilledeV from "../assets/images/stylingbilledeV.jpg";
+import stylingbilledeH from "../assets/images/stylingbilledeH.jpg";
+import stylingbillede_zoom_1 from "../assets/images/stylingbillede_zoom_1.jpg";
+import stylingbillede_zoom_2 from "../assets/images/stylingbillede_zoom_2.jpg";
+import flereCuffs from "../assets/images/flereCuffs.jpg";
+import mangeCuffs from "../assets/images/mangeCuffs.JPG";
+import samling from "../assets/images/samling.jpg";
+import pose from "../assets/images/pose.jpg";
 ---
 
 <MainLayout title="om">
@@ -86,11 +94,49 @@ import procesbillede from "../assets/images/procesbillede.jpg";
 		</div>
 		<div class="h-[100vh]"></div>
 	</section>
-    <section class="parallaxgrafik fullwidthsection">
-<div class="h-screen w-full grid grid-cols-12 overflow-hidden">
-
-</div>
-    </section>
+	<section id="section4" class="parallaxgrafik fullwidthsection">
+		<div class="h-screen w-full grid grid-cols-12 grid-rows-12">
+			<Image src={stylingbillede_zoom_1} alt="styling" class="col-start-2 col-span-3 row-start-4 rounded-[4px] md:rounded-[8px] parallaxgrafik1" />
+			<Image src={stylingbilledeV} alt="styling" class="col-start-1 col-span-2 row-start-7 rounded-[4px] md:rounded-[8px] parallaxgrafik2" />
+			<Image src={stylingbillede_zoom_2} alt="styling" class="col-start-9 col-span-3 row-start-8 rounded-[4px] md:rounded-[8px] parallaxgrafik3" />
+			<Image src={stylingbilledeH} alt="styling" class="col-start-11 col-span-2 row-start-4 rounded-[4px] md:rounded-[8px] parallaxgrafik4" />
+			<div class="col-start-5 col-span-4 row-start-5 z-1">
+				<p class="flex justify-center">
+					<P variant="centerAligned" tekst="Jeg ville bare stadig have følelsen af piercings op ad øret." />
+				</p>
+				<p class="font-display text-[23px] md:text-[54px] uppercase text-red-400 text-center">Det edgy, det personlige, det legende.</p>
+				<p>
+					<P variant="centerAligned" tekst="Cuffs blev min måde at tage kontrollen tilbage på!" />
+				</p>
+			</div>
+		</div>
+	</section>
+	<div class="overflow-clip">
+        <div id="scroll_container2" class="h-[500vh]">
+            <div id="scrollliste2" class="flex sticky top-[10vh]">
+		<section id="section5" class="flex w-screen h-screen overflow-hidden flex-grow-0 flex-shrink-0 flex-auto gap-3xl">
+			<div class="video w-[502px] content-center">
+				<video src="public/styling_gif_webm.webm" autoplay muted loop></video>
+			</div>
+			<div class="content-center">
+				<h2>
+					<H2 tekst="Smykker uden begrænsninger" />
+				</h2>
+				<p>
+					<P tekst="Det, jeg elsker mest ved cuffs, er friheden. Du kan mixe og matche, stable dem op ad øret, style dem asymmetrisk eller helt klassisk. Du har muligheden for at udtrykke noget personligt - uden at være låst af, hvad “man plejer”. Der er ikke én rigtig måde at bære dem på – kun din egen. Mange af jer starter med én eller to og vender tilbage for at bygge videre. Det gør mig så glad!" />
+				</p>
+			</div>
+		</section>
+        
+		<div class="grid grid-cols-12 grid-rows-12">
+			<Image src={flereCuffs} alt="flere cuffs" class="" />
+			<Image src={mangeCuffs} alt="mange cuffs" />
+			<Image src={samling} alt="samling af cuffs" />
+			<Image src={pose} alt="pose med smykket" />
+		</div>
+	</div>
+    </div>
+    </div>
 </MainLayout>
 
 <script>
@@ -107,6 +153,23 @@ import procesbillede from "../assets/images/procesbillede.jpg";
 	});
 	scroll(animate(".parallaxelement2", { y: [2000, -30] }), {
 		target: document.querySelector("#burnnn"),
+	});
+
+	scroll(animate(".parallaxgrafik1", { y: [0, 450] }), {
+		target: document.querySelector(".parallaxgrafik"),
+		offset: ["start end", "end start"],
+	});
+	scroll(animate(".parallaxgrafik2", { y: [0, -450] }), {
+		target: document.querySelector(".parallaxgrafik"),
+		offset: ["start end", "end start"],
+	});
+	scroll(animate(".parallaxgrafik3", { y: [0, -500] }), {
+		target: document.querySelector(".parallaxgrafik"),
+		offset: ["start end", "end start"],
+	});
+	scroll(animate(".parallaxgrafik4", { y: [0, 450] }), {
+		target: document.querySelector(".parallaxgrafik"),
+		offset: ["start end", "end start"],
 	});
 
 	// FORSØG PÅ SCROLL ZOOM
