@@ -1,0 +1,60 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+import { Image } from "astro:assets";
+import H1 from "../components/H1.astro";
+import H2 from "../components/H2.astro";
+import P from "../components/P.astro";
+import QuantityButton from "../components/QuantityButton.astro";
+import beadedMedium from "../assets/images/beadedMedium.jpg";
+import beadedMediumProdukt from "../assets/images/beadedMediumProdukt.png";
+---
+
+<MainLayout title="Singleview">
+	<article class="mt-2xl md:mt-5xl pb-xl">
+		<div class="px-sm md:px-[108px] pb-ml">
+			<h1 class="pb-s">
+				<H1 tekst="Gold beaded small cuff" />
+			</h1>
+			<h2 class="pb-s">
+				<H2 tekst="500 DKK" />
+			</h2>
+			<div class="py-xs">
+				<QuantityButton />
+			</div>
+
+			<Button variant="primary">Læg i kurv</Button>
+		</div>
+		<div class="grid grid-cols-2">
+			<Image class="rounded-[8px] w-[209px]" src={beadedMedium} alt="Stylet ørering på øret" />
+			<div class="grid justify-end">
+				<Image class="w-[168px]" src={beadedMediumProdukt} alt="Produktbillede af earcuff" />
+				<div class="content-end">
+					<div class="pb-xxs">
+						<p class="text-[14px] font-medium font-sans">Materiale</p>
+						<P tekst="Sterling sølv" />
+					</div>
+					<div>
+						<p class="text-[14px] font-medium font-sans">Størrelse</p>
+						<P tekst="2 x 2 cm" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="flex justify-between">
+			<div class="flex flex-col">
+				<p class="font-display text-[20px] text-[#5B251B] opacity-50">Håndlavet</p>
+				<P variant="centerAligned" tekst="I København" />
+			</div>
+			<div>
+				<p class="font-display text-[20px] text-[#5B251B] opacity-50">100%</p>
+				<P variant="centerAligned" tekst="Sterling sølv" />
+			</div>
+			<div>
+				<p class="font-display text-[20px] text-[#5B251B] opacity-50">#madetoorder</p>
+				<P variant="centerAligned" tekst="Laves på bestilling" />
+			</div>
+		</div>
+	</article>
+</MainLayout>
