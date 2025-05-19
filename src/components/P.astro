@@ -1,10 +1,20 @@
 ---
-const { tekst = "", variant = "" } = Astro.props;
+const { tekst = "", variant = "", weight = "", color = "" } = Astro.props;
 
 const variantClasses = {
 	leftAligned: "text-left",
-	centerAligned: "text-center",
+	centerAligned: "text-center"
+};
+
+const weightClasses = {
+	fontBold: "font-bold",
+	fontLight: "font-light"
+};
+
+const colorClasses = {
+	darkRed: "text-red-950",
+	lightBeige: "text-beige-500"
 };
 ---
 
-<p class:list={[variantClasses[variant]]} class="font-sans text-red-950 text-[13px] md:text-[16px] font-light max-w-[62ch]">{tekst}</p>
+<p class:list={[variantClasses[variant], weightClasses[weight], colorClasses[color] ]} class="font-sans text-[13px] md:text-[16px] max-w-[62ch]">{tekst}</p>

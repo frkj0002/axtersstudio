@@ -1,5 +1,10 @@
 ---
-const { tekst } = Astro.props;
+const { tekst = "", color = "" } = Astro.props;
+
+const colorClasses = {
+	darkRed: "text-red-950",
+	lightBeige: "text-beige-500"
+};
 ---
 
-<h3 class="font-sans text-red-950 text-[14px] md:text-[20px] uppercase font-medium">{tekst}</h3>
+<h3 class:list={[colorClasses[color]]} class="font-sans text-[14px] md:text-[20px] uppercase font-medium">{tekst}</h3>

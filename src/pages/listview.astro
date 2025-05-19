@@ -8,8 +8,39 @@ import Card from "../components/Card.astro";
 ---
 
 <MainLayout title="produktoversigt">
-    <div class="mt-5xl">
-    <Card/>
-</div>
+<section class="mx-sm md:mx-[108px]">
+    <section class="mt-5xl gap-xxs grid">
+        <H1 tekst="produkter"/>
+        <div>
+            <P weight="fontBold" color="darkRed" tekst="Axters Studios’ earcuffs er skabt til dig, der elsker det personlige udtryk, men ikke vil bøvle med piercinger."/>
+            <P weight="fontLight" color="darkRed" tekst="Alle cuffs er håndlavet i ægte materialer og designet til at give dig friheden til at lege med udtryk. Her er der plads til at eksperimentere, stable, mikse og skabe din helt egen stil – uanset alder, piercinger eller præferencer. Smykkerne er skabt til at følge dit humør og dine øreflipper, præcis som de er."/>
+        </div>
+        <div>
+            <P weight="fontBold" color="darkRed" tekst="Alle smykker bliver lavet på bestilling – og dét tager lidt tid."/>
+            <P weight="fontLight" color="darkRed" tekst="Men måske er det netop derfor, du kommer til at holde endnu mere af det. For når du endelig står med din cuff i hånden, ved du, at den er lavet til dig – ikke før. Og det kan mærkes, hver gang du tager den på."/>
+        </div>
+    </section>
+    <section class="flex justify-center gap-lg md:gap-xl mt-xl md:mt-[60px] mb-m md:mb-[53px]">
+        <button>
+            <H2 tekst="cuffs"/>
+        </button>
+        <button>
+            <H2 tekst="vedhæng"/>
+        </button>
+    </section>
+    <section class="grid grid-cols-2 md:grid-cols-4 justify-between gap-xxs md:gap-xs mb-3xl md:mb-[262px]">
+        <Card/>
+        <Card/>
+        <Card/>
+        <Card/>
+        <Card/>
+        <Card/>
+        <Card/>
+        <Card/>
+        <Card/>
+        <Card/>
+    </section>
+</section>
+
 
 </MainLayout>
