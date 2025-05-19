@@ -1,5 +1,15 @@
 ---
+// Henter parametrene fra Astro.props
+const { href = "#", target = "_self", variant = "",  } = Astro.props;
+
+const buttonStyling = "font-medium font-sans rounded-[4px] md:rounded-[8px] text-[17px] md:text-[22px] px-sm md:px-s py-xxs md:py-xs";
+
+const variantClasses = {
+	primary: "bg-red-400 text-beige-500 hover:bg-red-500 w-full",
+	secondary: "bg-transparent border-1 md:border-2 border-red-400 text-red-400 hover:bg-red-400 hover:text-beige-500",
+};
 ---
+
 <div>
-    <button class="border-2 border-black"><slot /></button>
+	<button class:list={[buttonStyling, variantClasses[variant]]}><slot /></button>
 </div>
