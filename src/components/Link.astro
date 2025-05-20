@@ -1,15 +1,23 @@
 ---
-// Henter parametrene fra Astro.props
-const { href = "#", target = "_self", variant = "",  } = Astro.props;
+const { href = "#", target = "_self", variant = "", size = "" } = Astro.props;
 
-const buttonStyling = "font-medium font-sans rounded-[4px] md:rounded-[8px] text-[17px] md:text-[22px] px-s md:px-s py-ml md:py-xs";
+const buttonStyling = "font-medium font-sans rounded-[4px] md:rounded-[8px] text-[17px] md:text-[22px]";
 
 const variantClasses = {
-	primary: "bg-red-400 text-beige-500 hover:bg-red-500",
-	secondary: "bg-transparent border-1 md:border-2 border-red-400 text-red-400 hover:bg-red-400 hover:text-beige-500",
+  primary: "bg-red-400 text-beige-500 hover:bg-red-500",
+  secondary: "bg-transparent border-1 md:border-2 border-red-400 text-red-400 hover:bg-red-400 hover:text-beige-500",
+};
+
+const sizeClasses = {
+  short: "w-[124px] py-xxs px-sm",
+  medium: "w-[200px] py-xs px-s",
+  long: "w-[325px] py-xs px-s",
+  full: "w-full py-xs px-s inline-block text-center",
 };
 ---
-
 <div>
-	<a class:list={[buttonStyling, variantClasses[variant]]}><slot /></a>
+  <a href={href} target={target} class:list={[buttonStyling, variantClasses[variant], sizeClasses[size]]}>
+    <slot />
+  </a>
 </div>
+

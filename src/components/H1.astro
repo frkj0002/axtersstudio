@@ -1,5 +1,11 @@
 ---
-const { tekst } = Astro.props;
+const { tekst, variant = "" } = Astro.props;
+
+const variantClasses = {
+	leftAligned: "text-left",
+	rightAligned: "text-right",
+	centerAligned: "text-center",
+};
 ---
 
-<h1 class="font-display text-red-950 text-[45px] md:text-[100px] uppercase">{tekst}</h1>
+<h1 class:list={[variantClasses[variant]]} class="font-display text-red-950 text-[45px] md:text-[100px] uppercase">{tekst}</h1>
