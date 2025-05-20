@@ -12,48 +12,51 @@ import beadedMediumProdukt from "../assets/images/beadedMediumProdukt.png";
 ---
 
 <MainLayout title="Singleview">
-	<article class="mt-2xl md:mt-5xl pb-xl">
-		<div class="px-sm md:px-[108px] pb-ml">
-			<h1 class="pb-s">
-				<H1 tekst="Gold beaded small cuff" />
-			</h1>
-			<h2 class="pb-s">
-				<H2 tekst="500 DKK" />
-			</h2>
-			<div class="py-xs">
-				<QuantityButton />
-			</div>
+	<article class="mt-2xl md:mt-6xl pb-lg md:pb-4xl">
+		<div class="md:grid md:grid-cols-2 gap-x-s">
+			<div class="px-sm md:pl-[108px] md:px-0 pb-ml md:pb-0">
+				<h1 class="">
+					<H1 tekst="Gold beaded small cuff" />
+				</h1>
+				<h2 class="pb-s">
+					<H2 tekst="500 DKK" />
+				</h2>
+				<div class="py-xs">
+					<QuantityButton />
+				</div>
 
-			<Button variant="primary">Læg i kurv</Button>
-		</div>
-		<div class="grid grid-cols-2">
-			<Image class="rounded-[8px] w-[209px]" src={beadedMedium} alt="Stylet ørering på øret" />
-			<div class="grid justify-end">
-				<Image class="w-[168px]" src={beadedMediumProdukt} alt="Produktbillede af earcuff" />
-				<div class="content-end">
-					<div class="pb-xxs">
-						<p class="text-[14px] font-medium font-sans">Materiale</p>
-						<P tekst="Sterling sølv" />
-					</div>
-					<div>
-						<p class="text-[14px] font-medium font-sans">Størrelse</p>
-						<P tekst="2 x 2 cm" />
+				<Button variant="primary">Læg i kurv</Button>
+			</div>
+			<div class="grid grid-cols-2 md:pr-[108px]">
+				<Image class="rounded-[8px] w-[209px] md:w-auto md:h-full" src={beadedMedium} alt="Stylet ørering på øret" />
+				<div class="grid justify-end">
+					<Image class="w-[168px] md:w-[299px]" src={beadedMediumProdukt} alt="Produktbillede af earcuff" />
+					<div class="content-end">
+						<div class="pb-xxs">
+							<p class="text-[14px] font-medium font-sans">Materiale</p>
+							<P tekst="Sterling sølv" />
+						</div>
+						<div>
+							<p class="text-[14px] font-medium font-sans">Størrelse</p>
+							<P tekst="2 x 2 cm" />
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="flex justify-between">
+
+		<div class="flex justify-between px-sm pt-ml md:px-[108px]">
 			<div class="flex flex-col">
-				<p class="font-display text-[20px] text-[#5B251B] opacity-50">Håndlavet</p>
-				<P variant="centerAligned" tekst="I København" />
+				<p class="font-display text-[20px] md:text-[86px] text-[#5B251B] opacity-50 text-center">Håndlavet</p>
+				<p class="text-[13px] md:text-[25px] font-light font-sans text-center">I København</p>
 			</div>
 			<div>
-				<p class="font-display text-[20px] text-[#5B251B] opacity-50">100%</p>
-				<P variant="centerAligned" tekst="Sterling sølv" />
+				<p class="font-display text-[20px] md:text-[86px] text-[#5B251B] opacity-50 text-center">100%</p>
+				<p class="text-[13px] md:text-[25px] font-light font-sans text-center">Sterling sølv</p>
 			</div>
 			<div>
-				<p class="font-display text-[20px] text-[#5B251B] opacity-50">#madetoorder</p>
-				<P variant="centerAligned" tekst="Laves på bestilling" />
+				<p class="font-display text-[20px] md:text-[86px] text-[#5B251B] opacity-50 text-center">#madetoorder</p>
+				<p class="text-[13px] md:text-[25px] font-light font-sans text-center">Laves på bestilling</p>
 			</div>
 		</div>
 	</article>
