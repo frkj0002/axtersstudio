@@ -6,6 +6,12 @@ import H2 from "../components/H2.astro";
 import P from "../components/P.astro";
 import Card from "../components/Card.astro";
 import Button from "../components/Button.astro";
+const data = await fetch("https://oxppimrpwhurjkfesgbb.supabase.co/rest/v1/axtersstudio", {
+    method: "GET",
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im94cHBpbXJwd2h1cmprZmVzZ2JiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc4MDkzMjIsImV4cCI6MjA2MzM4NTMyMn0.MSmhVUJzpVziGnZDIxc0k73A-J7DrLilntDBWo9auN4",
+    },
+  }).then((response) => response.json());
 ---
 
 <MainLayout title="produktoversigt">
@@ -36,6 +42,11 @@ import Button from "../components/Button.astro";
         </button> -->
     </section>
     <section class="grid grid-cols-2 md:grid-cols-4 justify-between gap-xxs md:gap-xs mb-3xl md:mb-[262px]">
+        {data.map(show=>{
+            return <Card data={show}/>
+        })}
+        
+        <!-- <Card/>
         <Card/>
         <Card/>
         <Card/>
@@ -43,9 +54,7 @@ import Button from "../components/Button.astro";
         <Card/>
         <Card/>
         <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
+        <Card/> -->
     </section>
 </section>
 

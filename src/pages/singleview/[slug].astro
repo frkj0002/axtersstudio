@@ -1,0 +1,86 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Button from "../../components/Button.astro";
+import Link from "../../components/Link.astro";
+import { Image } from "astro:assets";
+import H1 from "../../components/H1.astro";
+import H2 from "../../components/H2.astro";
+import P from "../../components/P.astro";
+import QuantityButton from "../../components/QuantityButton.astro";
+import beadedMedium from "../../assets/images/beadedMedium.jpg";
+import beadedMediumProdukt from "../../assets/images/beadedMediumProdukt.png";
+
+// Bruger funktionen getStaticPaths() til at generere stier for statiske sider baseret på data fra database.
+export async function getStaticPaths() {
+  // Henter data fra en bestemt URL vha. fetch-funktionen.
+  const data = await fetch("https://oxppimrpwhurjkfesgbb.supabase.co/rest/v1/axtersstudio", {
+    method: "GET",
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im94cHBpbXJwd2h1cmprZmVzZ2JiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc4MDkzMjIsImV4cCI6MjA2MzM4NTMyMn0.MSmhVUJzpVziGnZDIxc0k73A-J7DrLilntDBWo9auN4",
+    },
+  }).then((response) => response.json());
+  // Når dataen er hentet, mapper funktionen over dataen og returnerer en liste over stier og egenskaber for hver side, der skal genereres statisk.
+  return data.map((show) => {
+    return {
+      params: { slug: show.slug },
+      props: { data: show },
+    };
+  });
+}
+const { data } = Astro.props; // Definerer en konstant "data", der har adgang til dataen i databasen
+console.log(data); // Viser data i terminalen
+---
+
+<MainLayout title={data.name}>
+	<article class="mt-2xl md:mt-6xl pb-lg md:pb-4xl">
+		<div class="md:grid md:grid-cols-2 gap-x-s">
+			<div class="px-sm md:pl-[108px] md:px-0 pb-ml md:pb-0">
+				<h1 class="">
+					<H1 tekst={data.name} />
+				</h1>
+				<h2 class="pb-s">
+					<H2 tekst={data.price} />
+				</h2>
+				<div class="py-xs">
+					<QuantityButton />
+				</div>
+
+				<Button variant="primary">Læg i kurv</Button>
+			</div>
+			<div class="grid grid-cols-2 md:pr-[108px]">
+				<img class="rounded-[8px] w-[209px] md:w-auto md:h-full" src={data.styled_image_singleview} alt="Stylet ørering på øret" />
+				<div class="grid justify-end">
+					<img class="w-[168px] md:w-[299px] bg-green-500 rounded-[4px] md:rounded-[8px]" src={data.product_image} alt="Produktbillede af earcuff" />
+					<div class="content-end">
+						<div class="pb-xxs">
+							<p class="text-[14px] font-medium font-sans">Materiale</p>
+							<P tekst="Sterling sølv" />
+						</div>
+						<div>
+							<p class="text-[14px] font-medium font-sans">Størrelse</p>
+							<P tekst={data.size} />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="flex justify-between px-sm pt-ml md:px-[108px]">
+			<div class="flex flex-col">
+				<p class="font-display text-[20px] md:text-[86px] text-[#5B251B] opacity-50 text-center">Håndlavet</p>
+				<p class="text-[13px] md:text-[25px] font-light font-sans text-center">I København</p>
+			</div>
+			<div>
+				<p class="font-display text-[20px] md:text-[86px] text-[#5B251B] opacity-50 text-center">100%</p>
+				<p class="text-[13px] md:text-[25px] font-light font-sans text-center">Sterling sølv</p>
+			</div>
+			<div>
+				<p class="font-display text-[20px] md:text-[86px] text-[#5B251B] opacity-50 text-center">#madetoorder</p>
+				<p class="text-[13px] md:text-[25px] font-light font-sans text-center">Laves på bestilling</p>
+			</div>
+		</div>
+	</article>
+</MainLayout>
+
+
+

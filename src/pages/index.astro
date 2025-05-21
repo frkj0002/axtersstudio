@@ -103,7 +103,7 @@ import Header from "../components/Header.astro";
 				<Link href="/listview" variant="primary" size="full">Se alle produkter</Link>
 			</div>
 		</div>
-		<div class="mx-sm">
+		<div class="mx-sm flex flex-col gap-[20px]">
 			<div class="grid grid-cols-3 relative w-auto content center ">
 				<Image src={procesbillede} alt="Procesbillede" class="col-start-1 col-end-3 row-start-1 -row-end-1 rounded-[4px] md:rounded-[8px] z-0 w-[222px] md:w-[650px]" />
 				<Image src={portraet} alt="Portrætbillede" class="col-start-2 col-end-4 row-start-1 rounded-[4px] md:rounded-[8px] z-10 w-[163px] md:w-[400px] self-center" />
@@ -123,39 +123,34 @@ import Header from "../components/Header.astro";
 			</div>
 		</div>
 	</section>
+	
 	<div class="overflow-clip">
-		<section id="horisontalscrollsection" class="h-[500vw]">
-			<ul id="horisontalliste" class="list-none pl-0 flex sticky top-[10vh] ">
-				<li class="pl-0 flex w-[110vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
-					<div class="grid grid-cols-2 grid-rows-2 w-[459px] h-[414px] gap-[14px] ">
-						<Image src={billede1} alt="billede af øre med earcuffs" class="w-full h-full col-start-1 row-start-1 rounded-[4px] md:rounded-[8px]" />
-						<Image src={billede2} alt="billede af øre med earcuffs" class="w-[245px] h-[414px] col-start-2 row-start-1 rounded-[4px] md:rounded-[8px]" />
-						<Image src={billede3} alt="billede af øre med earcuffs" class="w-full h-full col-start-1 row-start-2 rounded-[4px] md:rounded-[8px]" />
+		<section id="horisontalscrollsection" class="h-[500vw] mt-xl">
+			<ul id="horisontalliste" class="list-none pl-0 flex sticky top-[13vh] gap-[14px]">
+				<li class="pl-0 flex w-[110vw] items-start justify-center overflow-hidden flex-grow-0 flex-shrink-0 flex-auto gap-[14px]">
+					<div class="flex flex-col w-[200px] h-[414px] gap-[14px] ">
+						<Image src={billede1} alt="billede af øre med earcuffs" class="w-full h-full  rounded-[4px] md:rounded-[8px]" />
+						<Image src={billede3} alt="billede af øre med earcuffs" class="w-full h-full  rounded-[4px] md:rounded-[8px]" />
 					</div>
-				</li>
-				<li class="pl-0 flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
-					<div class="">
-						<Image src={billede4} alt="stablet glatte earcuffs" class="w-[414px] rounded-[4px] md:rounded-[8px]" />
-					</div>
-				</li>
-				<li class="pl-0 flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
 					<div>
-						<Image src={billede5} alt="stablet beaded earcuffs" class="w-[414px] rounded-[4px] md:rounded-[8px]" />
-					</div>
-				</li>
-				<li class="pl-0 flex w-[78vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
-					<div class="grid grid-rows-2 w-[318px] h-[414px] gap-[14px]">
-						<Image src={billede6} alt="cuffs stylet på pige" class="row-start-1 w-[318px] rounded-[4px] md:rounded-[8px]" />
-						<Image src={billede7} alt="cuffs stylet på marmor øre" class="row-start-2 w-full rounded-[4px] md:rounded-[8px]" />
+						<Image src={billede2} alt="billede af øre med earcuffs" class="w-[245px] h-[414px] rounded-[4px] md:rounded-[8px]" />
 					</div>
 				</li>
 				<li class="pl-0 flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
-					<div>
-						<Image src={billede8} alt="stablet beaded earcuffs" class="w-[414px] rounded-[4px] md:rounded-[8px]" />
-					</div>
+					<Image src={billede4} alt="stablet glatte earcuffs" class="w-[414px] rounded-[4px] md:rounded-[8px]" />
 				</li>
-				<li class="pl-0 flex w-[80vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
-					<div class="w-[318px] h-[414px] gap-[22px] content-center">
+				<li class="pl-0 flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
+					<Image src={billede5} alt="stablet beaded earcuffs" class="w-[414px] rounded-[4px] md:rounded-[8px]" />
+				</li>
+				<li class="pl-0 flex items-start justify-center  overflow-hidden flex-grow-0 flex-shrink-0 flex-auto gap-[14px]">
+					<div class="flex flex-col w-[318px] h-[414px] gap-[14px]">
+						<Image src={billede6} alt="cuffs stylet på pige" class="w-[318px] rounded-[4px] md:rounded-[8px]" />
+						<Image src={billede7} alt="cuffs stylet på marmor øre" class="w-full rounded-[4px] md:rounded-[8px]" />
+					</div>
+					<div>
+						<Image src={billede8} alt="cuffs stylet på emilie axters" class="w-[414px] rounded-[4px] md:rounded-[8px]" />
+					</div>
+					<div class="flex flex-col gap-[22px] items-center justify-center mx-xl">
 						<H1 tekst="Følg mig" variant="centerAligned"></H1>
 						<div class="flex justify-center ">
 						<Image src={insta} alt=""></Image>
@@ -163,11 +158,13 @@ import Header from "../components/Header.astro";
 						</div>
 					</div>
 				</li>
+				<li class=" flex items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
+					
+				</li>
 			</ul>
 		</section>
 	</div>
-	<p>hej</p>
-	<p>med dig</p>
+	
 </MainLayout>
 
 <script>

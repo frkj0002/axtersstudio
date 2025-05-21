@@ -5,28 +5,31 @@ import P from "../components/P.astro";
 import kurvSort from "../assets/images/KurvIkonSort.svg";
 import kurvBeige from "../assets/images/KurvIkonBeige.svg";
 import { Image } from "astro:assets";
+
+const {data} = Astro.props;
+console.log(data);
 ---
 
-<a href="/singleview" class="group md:relative md:aspect-[7/7]">
+<a href={`/singleview/${data.slug}`} class="group md:relative md:aspect-[7/7]">
     <section class="bg-green-500 flex flex-col md:gap-ml p-xxs md:p-s rounded-[4px] md:rounded-[8px] md:absolute md:inset-0 md:transition-opacity md:duration-200 md:group-hover:opacity-0">
         <div class="w-xl md:w-[170px] place-self-center">
-            <img src="/beaded_silver_xs3.jpg" alt="billede af earcuff">
+            <img src={data.product_image} alt="billede af earcuff">
         </div>
         <div class="">
-            <H3 color="darkRed" tekst="xs beaded earcuff"/>
-            <H4 color="darkRed" tekst="sølv"/>
+            <H3 color="darkRed" tekst={data.name} />
+            <H4 color="darkRed" tekst={data.color}/>
             <div class="flex justify-between pt-[12px] items-center">
-                <P color="darkRed" weight="fontLight" tekst="700 DKK"/>
+                <P color="darkRed" weight="fontLight" tekst={data.price}  />
                 <Image src={kurvSort} alt="profilikon" class="w-xs md:w-[20px]" />
             </div>
         </div>
     </section>
     <section class="hidden md:block content-end md:p-s rounded-[4px] md:rounded-[8px] bg-cover bg-center absolute inset-0 transition-opacity duration-200 opacity-0 group-hover:opacity-100" style="background-image:url('/beaded_hover.png')">
         <div class="">
-            <H3 color="lightBeige" tekst="xs beaded earcuff" class=""/>
-            <H4 color="lightBeige" tekst="sølv"/>
+            <H3 color="lightBeige" tekst={data.name} class=""/>
+            <H4 color="lightBeige" tekst={data.color}/>
             <div class="flex justify-between pt-[12px] items-center">
-                <P color="lightBeige" weight="fontLight" tekst="700 DKK"/>
+                <P color="lightBeige" weight="fontLight" tekst={data.price} />
                 <Image src={kurvBeige} alt="profilikon" class="w-xs md:w-[20px]" />
             </div>
         </div>
