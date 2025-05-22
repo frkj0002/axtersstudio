@@ -27,89 +27,96 @@ import Header from "../components/Header.astro";
 ---
 
 <MainLayout title="Forside">
-	<section class="mt-3xl md:mt-6xl">
+	<section class="mt-3xl md:mt-4xl">
 		<div class="grid place-items-center">
 			<div class="grid grid-rows-[auto,auto] justify-items-center">
 				<video src="public/forsideVideo.webm" class="rounded-[4px] md:rounded-[8px] w-[324px] md:w-[940px] row-start-1" autoplay muted loop></video>
 				<h1 class="font-display text-red-400 text-[57px] md:text-[220px] uppercase row-start-2 transform -translate-y-10 md:-translate-y-40">Axters Studio</h1>
 			</div>
 		</div>
-
-		<div class="grid md:grid-cols-3 gap-xxs mx-sm">
-			<a href="/singleview">
-				<section class="w-[220px] md:w-[327px] bg-blue-400 flex flex-col md:gap-ml p-xxs md:p-s rounded-[4px] md:rounded-[8px]">
-					<div class="w-[122px] md:w-[153px] place-self-center pb-4 md:pb-0">
-						<img src="public/cuff_w_pearl.webp" alt="billede af earcuff" />
-					</div>
-					<div class="">
-						<H3 color="darkRed" tekst="xs beaded earcuff" />
-						<H4 color="darkRed" tekst="sølv" />
-						<div class="flex justify-between pt-[12px] items-center">
-							<P color="darkRed" weight="fontLight" tekst="700 DKK" />
-							<Image src={kurvSort} alt="profilikon" class="w-xs md:w-[20px]" />
+		<!-- card sektion -->
+		<div class="gap-xxs mx-sm md:mx-[108px] md:flex md:items-end md:gap-xs md:-translate-y-6xl">
+			<!-- Sektion 1 -->
+			<div class="md:flex md:flex-col md:gap-xs">
+				<a href="/singleview/3" class="md:flex md:justify-end">
+					<section class="w-[220px] md:w-[327px] bg-blue-400 flex flex-col md:gap-ml p-xxs md:p-s rounded-[4px] md:rounded-[8px]">
+						<div class="w-[122px] md:w-[153px] place-self-center pb-4 md:pb-0">
+							<img src="{products[13].product_image}" alt="billede af earcuff" class="md:w-full" />
 						</div>
-					</div>
-				</section>
-			</a>
-
-			<a href="/singleview" class="flex justify-end md:justify-start">
-				<section class="w-[259px] md:w-[327px] bg-beige-600 flex flex-col md:gap-ml p-xxs md:p-s rounded-[4px] md:rounded-[8px]">
-					<div class="w-[122px] md:w-[153px] place-self-center pb-4 md:pb-0">
-						<img src="public/beaded_silver_medium.webp" alt="billede af earcuff" />
-					</div>
-					<div class="">
-						<H3 color="darkRed" tekst="xs beaded earcuff" />
-						<H4 color="darkRed" tekst="sølv" />
-						<div class="flex justify-between pt-[12px] items-center">
-							<P color="darkRed" weight="fontLight" tekst="700 DKK" />
-							<Image src={kurvSort} alt="profilikon" class="w-xs md:w-[20px]" />
+						<div class="">
+							<H3 color="darkRed" tekst="xs beaded earcuff" />
+							<H4 color="darkRed" tekst="sølv" />
+							<div class="flex justify-between pt-[12px] items-center">
+								<P color="darkRed" weight="fontLight" tekst="{products[13].price}" />
+								<Image src={kurvSort} alt="profilikon" class="w-xs md:w-[20px]" />
+							</div>
 						</div>
-					</div>
-				</section>
-			</a>
+					</section>
+				</a>
 
-			<a href="/singleview" class="">
-				<section class="w-[272px] md:w-[327px] bg-blue-700 flex flex-col md:gap-ml p-xxs md:p-s rounded-[4px] md:rounded-[8px]">
-					<div class="w-[199px] md:w-[153px] place-self-center pb-4 md:pb-0">
-						<img src="public/silver_large.webp" alt="billede af earcuff" />
-					</div>
-					<div class="">
-						<H3 color="darkRed" tekst="xs beaded earcuff" />
-						<H4 color="darkRed" tekst="sølv" />
-						<div class="flex justify-between pt-[12px] items-center">
-							<P color="darkRed" weight="fontLight" tekst="700 DKK" />
-							<Image src={kurvSort} alt="profilikon" class="w-xs md:w-[20px]" />
+				<a href="/singleview" class="flex justify-end md:justify-start">
+					<section class="w-[259px] md:w-[431px] bg-beige-600 flex flex-col md:gap-ml p-xxs md:p-s rounded-[4px] md:rounded-[8px]">
+						<div class="w-[122px] md:w-[200px] place-self-center pb-4 md:pb-0">
+							<img src="public/beaded_silver_medium.webp" alt="billede af earcuff" class="md:w-full" />
 						</div>
-					</div>
-				</section>
-			</a>
+						<div class="">
+							<H3 color="darkRed" tekst="xs beaded earcuff" />
+							<H4 color="darkRed" tekst="sølv" />
+							<div class="flex justify-between pt-[12px] items-center">
+								<P color="darkRed" weight="fontLight" tekst="700 DKK" />
+								<Image src={kurvSort} alt="profilikon" class="w-xs md:w-[20px]" />
+							</div>
+						</div>
+					</section>
+				</a>
+			</div>
+			<!-- Sektion 2 -->
+			<div class="md:flex md:flex-col md:gap-xs">
+				<div class="md:flex md:items-end md:gap-xs">
+					<a href="/singleview" class="">
+						<section class="w-[272px] md:w-[454px] bg-blue-700 flex flex-col md:gap-ml md:justify-between p-xxs md:p-s rounded-[4px] md:rounded-[8px]">
+							<div class="w-[199px] md:w-[300px] place-self-center pb-4">
+								<img src="public/silver_large.webp" alt="billede af earcuff" class="md:w-full" />
+							</div>
+							<div class="">
+								<H3 color="darkRed" tekst="xs beaded earcuff" />
+								<H4 color="darkRed" tekst="sølv" />
+								<div class="flex justify-between pt-[12px] items-center">
+									<P color="darkRed" weight="fontLight" tekst="700 DKK" />
+									<Image src={kurvSort} alt="profilikon" class="w-xs md:w-[20px]" />
+								</div>
+							</div>
+						</section>
+					</a>
 
-			<a href="/singleview" class="">
-				<section class="w-[272px] md:w-[327px] bg-green-500 flex flex-col md:gap-ml p-xxs md:p-s rounded-[4px] md:rounded-[8px]">
-					<div class="w-[282px] md:w-[153px] place-self-center pb-4 md:pb-0">
-						<img src="public/stort_vedhaeng.webp" alt="billede af earcuff" />
-					</div>
-					<div class="">
-						<H3 color="darkRed" tekst="xs beaded earcuff" />
-						<H4 color="darkRed" tekst="sølv" />
-						<div class="flex justify-between pt-[12px] items-center">
-							<P color="darkRed" weight="fontLight" tekst="700 DKK" />
-							<Image src={kurvSort} alt="profilikon" class="w-xs md:w-[20px]" />
-						</div>
-					</div>
-				</section>
-			</a>
-			<div class="my-10">
-				<Link href="/listview" variant="primary" size="full">Se alle produkter</Link>
+					<a href="/singleview" class="">
+						<section class="w-[272px] md:w-[383px] md:h-[616px] bg-green-500 flex flex-col md:justify-between p-xxs md:p-s rounded-[4px] md:rounded-[8px]">
+							<div class="w-[282px] md:w-[450px] place-self-center pb-4 md:pb-0">
+								<img src="public/stort_vedhaeng.webp" alt="billede af earcuff" class="md:w-full" />
+							</div>
+							<div class="">
+								<H3 color="darkRed" tekst="xs beaded earcuff" />
+								<H4 color="darkRed" tekst="sølv" />
+								<div class="flex justify-between pt-[12px] items-center">
+									<P color="darkRed" weight="fontLight" tekst="700 DKK" />
+									<Image src={kurvSort} alt="profilikon" class="w-xs md:w-[20px]" />
+								</div>
+							</div>
+						</section>
+					</a>
+				</div>
+				<div class="my-10 md:my-0">
+					<Link href="/listview" variant="primary" size="full">Se alle produkter</Link>
+				</div>
 			</div>
 		</div>
-		<div class="mx-sm flex flex-col gap-[20px]">
-			<div class="grid grid-cols-3 relative w-auto content center ">
+		<div class="mx-sm md:flex gap-[20px]">
+			<div class="grid grid-cols-3 relative w-auto content center">
 				<Image src={procesbillede} alt="Procesbillede" class="col-start-1 col-end-3 row-start-1 -row-end-1 rounded-[4px] md:rounded-[8px] z-0 w-[222px] md:w-[650px]" />
 				<Image src={portraet} alt="Portrætbillede" class="col-start-2 col-end-4 row-start-1 rounded-[4px] md:rounded-[8px] z-10 w-[163px] md:w-[400px] self-center" />
 			</div>
 
-			<div class="flex flex-col w-[254px]">
+			<div class="flex flex-col w-[254px] md:w-[400px] transform -translate-x-20 justify-center">
 				<H1 tekst="Emilie" />
 				<div class="transform -translate-y-8">
 					<H1 tekst="Axters" variant="rightAligned" />
@@ -118,53 +125,54 @@ import Header from "../components/Header.astro";
 					<P color="darkRed" weight="fontLight" tekst="Hey! Jeg hedder Emilie, og er skaberen bag Axters Studios. Klik på knappen herunder,  for at høre hvordan mit lille smykkeunivers opstod!" />
 				</div>
 				<div class="my-10">
-					<Link variant="secondary" size="short" href="/om">Om mig</Link>
+					<Link variant="secondary" size="full" href="/om">Om mig</Link>
 				</div>
 			</div>
 		</div>
 	</section>
-	
-	<div class="overflow-clip">
-		<section id="horisontalscrollsection" class="h-[500vw] mt-xl">
-			<ul id="horisontalliste" class="list-none pl-0 flex sticky top-[13vh] gap-[14px]">
-				<li class="pl-0 flex w-[110vw] items-start justify-center overflow-hidden flex-grow-0 flex-shrink-0 flex-auto gap-[14px]">
-					<div class="flex flex-col w-[200px] h-[414px] gap-[14px] ">
-						<Image src={billede1} alt="billede af øre med earcuffs" class="w-full h-full  rounded-[4px] md:rounded-[8px]" />
-						<Image src={billede3} alt="billede af øre med earcuffs" class="w-full h-full  rounded-[4px] md:rounded-[8px]" />
+
+	<div class="overflow-clip md:mb-6xl">
+		<section id="horisontalscrollsection" class="h-[500vh] relative mt-6xl">
+			<ul id="horisontalliste" class="list-none pl-0 flex sticky top-[13vh] md:top-[20vh] gap-[14px]">
+				<li class="pl-0 flex items-start justify-center overflow-hidden flex-grow-0 flex-shrink-0 flex-auto gap-[14px]">
+					<div class="flex flex-col w-[200px] h-[414px] md:w-[299px] md:h-[612px] gap-[14px]">
+						<Image src={billede1} alt="billede af øre med earcuffs" class="w-full h-full rounded-[4px] md:rounded-[8px]" />
+						<Image src={billede3} alt="billede af øre med earcuffs" class="w-full h-full rounded-[4px] md:rounded-[8px]" />
 					</div>
 					<div>
-						<Image src={billede2} alt="billede af øre med earcuffs" class="w-[245px] h-[414px] rounded-[4px] md:rounded-[8px]" />
+						<Image src={billede2} alt="billede af øre med earcuffs" class="w-[245px] md:w-[362px] rounded-[4px] md:rounded-[8px]" />
 					</div>
 				</li>
-				<li class="pl-0 flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
-					<Image src={billede4} alt="stablet glatte earcuffs" class="w-[414px] rounded-[4px] md:rounded-[8px]" />
+				<li class="pl-0 flex items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
+					<Image src={billede4} alt="stablet glatte earcuffs" class="w-[414px] md:w-[612px] rounded-[4px] md:rounded-[8px]" />
 				</li>
-				<li class="pl-0 flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
-					<Image src={billede5} alt="stablet beaded earcuffs" class="w-[414px] rounded-[4px] md:rounded-[8px]" />
+				<li class="pl-0 flex items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
+					<Image src={billede5} alt="stablet beaded earcuffs" class="w-[414px] md:w-[612px] rounded-[4px] md:rounded-[8px]" />
 				</li>
-				<li class="pl-0 flex items-start justify-center  overflow-hidden flex-grow-0 flex-shrink-0 flex-auto gap-[14px]">
-					<div class="flex flex-col w-[318px] h-[414px] gap-[14px]">
-						<Image src={billede6} alt="cuffs stylet på pige" class="w-[318px] rounded-[4px] md:rounded-[8px]" />
+				<li class="pl-0 flex items-start justify-center overflow-hidden flex-grow-0 flex-shrink-0 flex-auto gap-[14px]">
+					<div class="flex flex-col w-[318px] md:w-[476px] h-[414px] gap-[14px]">
+						<Image src={billede6} alt="cuffs stylet på pige" class="w-full rounded-[4px] md:rounded-[8px]" />
 						<Image src={billede7} alt="cuffs stylet på marmor øre" class="w-full rounded-[4px] md:rounded-[8px]" />
 					</div>
 					<div>
-						<Image src={billede8} alt="cuffs stylet på emilie axters" class="w-[414px] rounded-[4px] md:rounded-[8px]" />
+						<Image src={billede8} alt="cuffs stylet på emilie axters" class="w-[414px] md:w-[612px] rounded-[4px] md:rounded-[8px]" />
 					</div>
-					<div class="flex flex-col gap-[22px] items-center justify-center mx-xl">
-						<H1 tekst="Følg mig" variant="centerAligned"></H1>
-						<div class="flex justify-center ">
-						<Image src={insta} alt=""></Image>
-						<Image src={tiktok} alt=""></Image>
+					<div class="flex flex-col gap-[22px] items-center my-auto mx-xl relative">
+						<H1 tekst="Følg mig" variant="centerAligned" />
+						<div class="flex justify-center">
+							<a href="https://www.instagram.com/emilieaxtersstudio/" target="_blank">
+								<Image src={insta} alt="instagram logo" />
+							</a>
+							<a href="https://www.tiktok.com/@annaaconcerts/video/7504791616503303455" target="_blank">
+								<Image src={tiktok} alt="tiktok logo" />
+							</a>
 						</div>
 					</div>
 				</li>
-				<li class=" flex items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
-					
-				</li>
+				<li class="flex items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"></li>
 			</ul>
 		</section>
 	</div>
-	
 </MainLayout>
 
 <script>
@@ -172,7 +180,7 @@ import Header from "../components/Header.astro";
 	import { animate, scroll } from "motion";
 	scroll(
 		animate("#horisontalliste", {
-			transform: ["none", "translateX(-500vw)"],
+			transform: ["none", "translateX(-145vw)"],
 		}),
 		{ target: document.querySelector("#horisontalscrollsection") }
 	);
