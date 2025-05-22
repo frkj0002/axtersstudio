@@ -33,7 +33,7 @@ console.log(data); // Viser data i terminalen
 
 <MainLayout title={data.name}>
 	<article class="mt-2xl md:mt-6xl pb-lg md:pb-4xl">
-		<div class="md:grid md:grid-cols-2 gap-x-s">
+		<div class="md:grid md:grid-cols-2 gap-x-s md:pr-[108px]">
 			<div class="px-sm md:pl-[108px] md:px-0 pb-ml md:pb-0">
 				<h1 class="">
 					<H1 tekst={data.name_singleview} />
@@ -47,18 +47,18 @@ console.log(data); // Viser data i terminalen
 
 				<Button variant="primary">Læg i kurv</Button>
 			</div>
-			<div class="grid grid-cols-2 md:pr-[108px]">
-				<img class="rounded-[8px] w-[209px] md:w-auto md:h-full" src={data.styled_image_singleview} alt="Stylet ørering på øret" />
+			<div class="grid grid-cols-2 gap-xs md:justify-end pr-0">
+				<img class="rounded-[4px] md:rounded-[8px] w-full md:w-auto md:h-full" src={data.styled_image_singleview} alt="Stylet ørering på øret" />
 				<div class="grid justify-end">
-					<img class="w-[168px] md:w-[299px] bg-green-500 rounded-[4px] md:rounded-[8px]" src={data.product_image} alt="Produktbillede af earcuff" />
+					<img class="w-full md:w-auto bg-green-500 rounded-[4px] md:rounded-[8px]" src={data.product_image} alt="Produktbillede af earcuff" />
 					<div class="content-end">
 						<div class="pb-xxs">
-							<p class="text-[14px] font-medium font-sans">Materiale</p>
-							<P tekst="Sterling sølv" />
+							<p class="text-[14px] md:text-[20px] font-medium font-sans">Materiale</p>
+							<p class="text-[14px] md:text-[20px] font-light font-sans">Sterling sølv</p>
 						</div>
 						<div>
-							<p class="text-[14px] font-medium font-sans">Størrelse</p>
-							<P tekst={data.size} />
+							<p class="text-[14px] md:text-[20px] font-medium font-sans">Størrelse</p>
+							<p class="text-[14px] md:text-[20px] font-light font-sans">{data.size}</p>
 						</div>
 					</div>
 				</div>
