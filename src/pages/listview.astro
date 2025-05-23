@@ -1,62 +1,41 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import { Image } from "astro:assets";
 import H1 from "../components/H1.astro";
-import H2 from "../components/H2.astro";
 import P from "../components/P.astro";
 import Card from "../components/Card.astro";
 import Button from "../components/Button.astro";
 const data = await fetch("https://oxppimrpwhurjkfesgbb.supabase.co/rest/v1/axtersstudio", {
-    method: "GET",
-    headers: {
-      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im94cHBpbXJwd2h1cmprZmVzZ2JiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc4MDkzMjIsImV4cCI6MjA2MzM4NTMyMn0.MSmhVUJzpVziGnZDIxc0k73A-J7DrLilntDBWo9auN4",
-    },
-  }).then((response) => response.json());
+	method: "GET",
+	headers: {
+		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im94cHBpbXJwd2h1cmprZmVzZ2JiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc4MDkzMjIsImV4cCI6MjA2MzM4NTMyMn0.MSmhVUJzpVziGnZDIxc0k73A-J7DrLilntDBWo9auN4",
+	},
+}).then((response) => response.json());
 ---
 
 <MainLayout title="produktoversigt" description="Axters Studios’ earcuffs er skabt til dig, der elsker det personlige udtryk, men ikke vil bøvle med piercinger." ogtitle="Earcuffs uden piercinger – Find din stil hos Axters Studios" ogdescription="Axters’ earcuffs er håndlavet på bestilling og klar til at matche dit humør. Mix, match og skab dit helt eget udtryk – ingen huller nødvendige.">
-<section class="mx-sm md:mx-[108px] overflow-hidden">
-    <section class="mt-5xl gap-xxs grid">
-        <H1 tekst="produkter"/>
-        <div>
-            <P weight="fontBold" color="darkRed" tekst="Axters Studios’ earcuffs er skabt til dig, der elsker det personlige udtryk, men ikke vil bøvle med piercinger."/>
-            <P weight="fontLight" color="darkRed" tekst="Alle cuffs er håndlavet i ægte materialer og designet til at give dig friheden til at lege med udtryk. Her er der plads til at eksperimentere, stable, mikse og skabe din helt egen stil – uanset alder, piercinger eller præferencer. Smykkerne er skabt til at følge dit humør og dine øreflipper, præcis som de er."/>
-        </div>
-        <div>
-            <P weight="fontBold" color="darkRed" tekst="Alle smykker bliver lavet på bestilling – og dét tager lidt tid."/>
-            <P weight="fontLight" color="darkRed" tekst="Men måske er det netop derfor, du kommer til at holde endnu mere af det. For når du endelig står med din cuff i hånden, ved du, at den er lavet til dig – ikke før. Og det kan mærkes, hver gang du tager den på."/>
-        </div>
-    </section>
-    <section class="flex justify-center gap-lg md:gap-xl mt-xl md:mt-[60px] mb-m md:mb-[53px]">
-        <Button variant="textButton">alle produkter</Button>
-        <Button variant="textButton">cuffs</Button>
-        <Button variant="textButton">vedhæng</Button>
-        <!-- <button>
-            <H2 tekst="Alle produkter"/>
-        </button>
-        <button>
-            <H2 tekst="cuffs"/>
-        </button>
-        <button>
-            <H2 tekst="vedhæng"/>
-        </button> -->
-    </section>
-    <section class="grid grid-cols-2 md:grid-cols-4 justify-between gap-xxs md:gap-xs mb-3xl md:mb-[262px]">
-        {data.map(show=>{
-            return <Card data={show}/>
-        })}
-        
-        <!-- <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/> -->
-    </section>
-</section>
-
-
+	<section class="mx-sm md:mx-[108px] overflow-hidden">
+		<section class="mt-5xl gap-xxs grid">
+			<H1 tekst="produkter" />
+			<div>
+				<P weight="fontBold" color="darkRed" tekst="Axters Studios’ earcuffs er skabt til dig, der elsker det personlige udtryk, men ikke vil bøvle med piercinger." />
+				<P weight="fontLight" color="darkRed" tekst="Alle cuffs er håndlavet i ægte materialer og designet til at give dig friheden til at lege med udtryk. Her er der plads til at eksperimentere, stable, mikse og skabe din helt egen stil – uanset alder, piercinger eller præferencer. Smykkerne er skabt til at følge dit humør og dine øreflipper, præcis som de er." />
+			</div>
+			<div>
+				<P weight="fontBold" color="darkRed" tekst="Alle smykker bliver lavet på bestilling – og dét tager lidt tid." />
+				<P weight="fontLight" color="darkRed" tekst="Men måske er det netop derfor, du kommer til at holde endnu mere af det. For når du endelig står med din cuff i hånden, ved du, at den er lavet til dig – ikke før. Og det kan mærkes, hver gang du tager den på." />
+			</div>
+		</section>
+		<section class="flex justify-center gap-lg md:gap-xl mt-xl md:mt-[60px] mb-m md:mb-[53px]">
+			<Button variant="textButton">alle produkter</Button>
+			<Button variant="textButton">cuffs</Button>
+			<Button variant="textButton">vedhæng</Button>
+		</section>
+		<section class="grid grid-cols-2 md:grid-cols-4 justify-between gap-xxs md:gap-xs mb-3xl md:mb-[262px]">
+			{
+				data.map((show) => {
+					return <Card data={show} />;
+				})
+			}
+		</section>
+	</section>
 </MainLayout>
