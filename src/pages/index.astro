@@ -35,9 +35,9 @@ import Header from "../components/Header.astro";
 			</div>
 		</div>
 		<!-- Card sektion -->
-		<div class="gap-xxs mx-sm md:mx-[108px] md:flex md:items-end md:gap-xs md:-translate-y-6xl">
+		<div class="gap-xxs mx-sm md:mx-[108px] flex flex-col md:flex-row md:items-end md:gap-xs md:justify-center md:-translate-y-6xl">
 			<!-- Sektion 1 -->
-			<div class="md:flex md:flex-col md:gap-xs">
+			<div class="flex flex-col md:gap-xs gap-xxs ">
 				<a href="/singleview/cuff_with_pearl" class="md:flex md:justify-end md:relative group">
 					<section class="w-[220px] md:w-[327px] bg-blue-400 flex flex-col md:gap-ml p-xxs md:p-s rounded-[4px] md:rounded-[8px] md:inset-0 md:transition-opacity md:duration-200 md:group-hover:opacity-0">
 						<div class="w-[122px] md:w-[153px] place-self-center pb-4 md:pb-0">
@@ -52,7 +52,7 @@ import Header from "../components/Header.astro";
 							</div>
 						</div>
 					</section>
-					<section class="hidden md:block content-end md:p-s rounded-[4px] md:rounded-[8px] bg-cover bg-center absolute inset-0 transition-opacity duration-200 opacity-0 group-hover:opacity-100" style="background-image:url('/')">
+					<section class="hidden md:w-[327px] md:block content-end md:justify-self-end md:p-s rounded-[4px] md:rounded-[8px] bg-cover bg-center absolute inset-0 transition-opacity duration-200 opacity-0 group-hover:opacity-100" style="background-image:url('/cuff_with_pearl_hover.webp')">
 						<div class="">
 							<H3 color="lightBeige" tekst="Cuff with pearl" class="" />
 							<H4 color="lightBeige" tekst="Guld" />
@@ -64,7 +64,7 @@ import Header from "../components/Header.astro";
 					</section>
 				</a>
 
-				<a href="/singleview/medium_beaded_soelv" class="flex justify-end md:justify-start md:relative group">
+				<a href="/singleview/medium_beaded_soelv" class="flex justify-end md:justify-end md:relative group">
 					<section class="w-[259px] md:w-[431px] bg-beige-600 flex flex-col md:gap-ml p-xxs md:p-s rounded-[4px] md:rounded-[8px] md:inset-0 md:transition-opacity md:duration-200 md:group-hover:opacity-0">
 						<div class="w-[122px] md:w-[200px] place-self-center pb-4 md:pb-0">
 							<img src="public/beaded_silver_medium.webp" alt="billede af earcuff" class="md:w-full" />
@@ -78,7 +78,7 @@ import Header from "../components/Header.astro";
 							</div>
 						</div>
 					</section>
-					<section class="hidden md:block content-end md:p-s rounded-[4px] md:rounded-[8px] bg-cover bg-center absolute inset-0 transition-opacity duration-200 opacity-0 group-hover:opacity-100" style="background-image:url('/')">
+					<section class="hidden md:w-[431px] md:block content-end md:p-s rounded-[4px] md:rounded-[8px] bg-cover bg-center absolute inset-0 transition-opacity duration-200 opacity-0 group-hover:opacity-100" style="background-image:url('/beaded_silver_medium_hover.webp')">
 						<div class="">
 							<H3 color="lightBeige" tekst="Medium beaded earcuff" class="" />
 							<H4 color="lightBeige" tekst="Sølv" />
@@ -92,7 +92,7 @@ import Header from "../components/Header.astro";
 			</div>
 			<!-- Sektion 2 -->
 			<div class="md:flex md:flex-col md:gap-xs">
-				<div class="md:flex md:items-end md:gap-xs">
+				<div class="flex flex-col md:flex-row md:items-end md:gap-xs gap-xxs ">
 					<a href="/singleview/large_earcuff_soelv" class="md:relative group">
 						<section class="w-[272px] md:w-[454px] bg-blue-700 flex flex-col md:gap-ml md:justify-between p-xxs md:p-s rounded-[4px] md:rounded-[8px] md:inset-0 md:transition-opacity md:duration-200 md:group-hover:opacity-0">
 							<div class="w-[199px] md:w-[300px] place-self-center pb-4">
@@ -107,7 +107,7 @@ import Header from "../components/Header.astro";
 								</div>
 							</div>
 						</section>
-						<section class="hidden md:block content-end md:p-s rounded-[4px] md:rounded-[8px] bg-cover bg-center absolute inset-0 transition-opacity duration-200 opacity-0 group-hover:opacity-100" style="background-image:url('/')">
+						<section class="hidden md:w-[454px] md:block content-end md:p-s rounded-[4px] md:rounded-[8px] bg-cover bg-center absolute inset-0 transition-opacity duration-200 opacity-0 group-hover:opacity-100" style="background-image:url('/large_cuff_hover.webp')">
 						<div class="">
 							<H3 color="lightBeige" tekst="Large earcuff" class="" />
 							<H4 color="lightBeige" tekst="Sølv" />
@@ -133,7 +133,7 @@ import Header from "../components/Header.astro";
 								</div>
 							</div>
 						</section>
-						<section class="hidden md:block content-end md:p-s rounded-[4px] md:rounded-[8px] bg-cover bg-center absolute inset-0 transition-opacity duration-200 opacity-0 group-hover:opacity-100" style="background-image:url('/')">
+						<section class="hidden md:w-[383px] md:block content-end md:p-s rounded-[4px] md:rounded-[8px] bg-cover bg-center absolute inset-0 transition-opacity duration-200 opacity-0 group-hover:opacity-100" style="background-image:url('/stort_vedhaeng_hover.webp')">
 						<div class="">
 							<H3 color="lightBeige" tekst="Big pendant" class="" />
 							<H4 color="lightBeige" tekst="Guld" />
@@ -151,13 +151,13 @@ import Header from "../components/Header.astro";
 			</div>
 		</div>
 		<!-- Om sektion -->
-		<div class="mx-sm md:flex gap-[20px]">
+		<div class="mx-sm md:mx-[108px] md:flex gap-[20px]">
 			<div class="grid grid-cols-3 relative w-auto content center">
 				<Image src={procesbillede} alt="Procesbillede" class="col-start-1 col-end-3 row-start-1 -row-end-1 rounded-[4px] md:rounded-[8px] z-0 w-[222px] md:w-[650px]" />
 				<Image src={portraet} alt="Portrætbillede" class="col-start-2 col-end-4 row-start-1 rounded-[4px] md:rounded-[8px] z-10 w-[163px] md:w-[400px] self-center" />
 			</div>
 
-			<div class="flex flex-col w-[254px] md:w-[400px] transform -translate-x-20 justify-center">
+			<div class="flex flex-col w-[254px] md:w-[400px] md:transform md:-translate-x-20 justify-center">
 				<H1 tekst="Emilie" />
 				<div class="transform -translate-y-8">
 					<H1 tekst="Axters" variant="rightAligned" />
