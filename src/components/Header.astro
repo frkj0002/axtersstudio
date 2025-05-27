@@ -16,15 +16,15 @@ import kurv from "../assets/images/KurvIkonBlaa.svg";
 		<!-- Desktop Menu -->
 		<nav id="desktopmenu" class="hidden lg:flex flex-1 justify-center" x-data="{ currentPath: window.location.pathname + window.location.hash }">
 			<ul class="flex flex-row gap-lg items-center">
-				<a href="/listview" class="text-blue-800 hover:underline hover:decoration-blue-800" :class="{ 'underline decoration-blue-800': currentPath === '/listview' }"><li>Shop</li></a>
-				<a href="/om" class="text-blue-800 hover:underline hover:decoration-blue-800" :class="{ 'underline decoration-blue-800': currentPath === '/om_os' }"><li>Om</li></a>
-				<a href="/#inspiration" class="text-blue-800 hover:underline hover:decoration-blue-800 active:underline" :class="{ 'underline decoration-blue-800': currentPath === '/index#inspiration' }"><li>Inspiration</li></a>
+				<li><a href="/listview" class="text-blue-800 hover:underline hover:decoration-blue-800" :class="{ 'underline decoration-blue-800': currentPath === '/listview' }">Shop</a></li>
+				<li><a href="/om" class="text-blue-800 hover:underline hover:decoration-blue-800" :class="{ 'underline decoration-blue-800': currentPath === '/om_os' }">Om</a></li>
+				<li><a href="/#inspiration" class="text-blue-800 hover:underline hover:decoration-blue-800 active:underline" :class="{ 'underline decoration-blue-800': currentPath === '/index#inspiration' }">Inspiration</a></li>
 			</ul>
 		</nav>
 
 		<div class="flex items-center gap-sm">
 			<ul class="flex items-center md:pl-2xl">
-				<Image src={kurv} alt="profilikon" class="w-[40px] md:w-[20px]" />
+				<li><Image src={kurv} alt="profilikon" class="w-[40px] md:w-[20px]" /></li>
 			</ul>
 
 			<!-- Hamburger Menu Button -->
@@ -42,9 +42,9 @@ import kurv from "../assets/images/KurvIkonBlaa.svg";
 	<!-- Mobile Menu -->
 	<nav id="mobilmenu" class="lg:hidden sticky left-0 w-full h-screen z-40 pb-20 text-blue-800 bg-beige-500 flex flex-col pt-ml" x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click="showmenu = false">
 		<ul class="flex flex-col pl-[20px] gap-xs bg-beige-500">
-			<a href="/listview"><li>Shop</li></a>
-			<a href="/om"><li>Om</li></a>
-			<a href="/forside#inspiration"><li>Inspiration</li></a>
+			<li><a href="/listview">Shop</a></li>
+			<li><a href="/om">Om</a></li>
+			<li><a href="/forside#inspiration">Inspiration</a></li>
 		</ul>
 	</nav>
 </header>
